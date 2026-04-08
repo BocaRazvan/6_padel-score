@@ -1,22 +1,30 @@
 .page-home {
-  // 1. Updated height logic
-  height: 100vh;           /* Fallback for older browsers */
-  height: 100svh;          /* MAGIC LINE: Forces exact fit on mobile Safari/Chrome */
-  
+  height: 100vh;
+  height: 100svh;
   margin: 0;
   padding: 0;
-  overflow: hidden;        /* Prevents scrolling */
-  position: relative;
+  position: fixed; 
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden; 
   background-color: #000; 
-  
-  // Ensure the body/html don't fight the height
   display: flex;
   flex-direction: column;
 
+  // ADD THIS LINE - It stops the finger from dragging the screen
+  touch-action: none; 
+
   .video-background, .video-overlay {
     height: 100vh;
-    height: 100svh;        /* Match the container height */
-    position: fixed;       /* Use fixed to lock it to the glass */
+    height: 100svh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.6);
   }
 }
 
