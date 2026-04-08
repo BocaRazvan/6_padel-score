@@ -1,32 +1,22 @@
-// All of these rules will NOW only apply if the body has the class "page-home"
 .page-home {
+  // 1. Updated height logic
+  height: 100vh;           /* Fallback for older browsers */
+  height: 100svh;          /* MAGIC LINE: Forces exact fit on mobile Safari/Chrome */
   
-  // 1. Lock the screen size and remove the scrollbar for the home page ONLY
-  height: 100vh;
   margin: 0;
-  overflow: hidden; 
+  padding: 0;
+  overflow: hidden;        /* Prevents scrolling */
+  position: relative;
   background-color: #000; 
+  
+  // Ensure the body/html don't fight the height
+  display: flex;
+  flex-direction: column;
 
-  // 2. The Video Background
-  .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
+  .video-background, .video-overlay {
     height: 100vh;
-    object-fit: cover; 
-    z-index: -2;       
-  }
-
-  // 3. The Dark Overlay
-  .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7); 
-    z-index: -1; 
+    height: 100svh;        /* Match the container height */
+    position: fixed;       /* Use fixed to lock it to the glass */
   }
 }
 
