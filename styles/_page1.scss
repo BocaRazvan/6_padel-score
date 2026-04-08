@@ -13,7 +13,6 @@
   flex-direction: column;
 
   // ADD THIS LINE - It stops the finger from dragging the screen
-  touch-action: none; 
 
   .video-background, .video-overlay {
     height: 100vh;
