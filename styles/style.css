@@ -11980,37 +11980,40 @@ textarea.form-control-lg {
   }
 }
 .page-home {
-  height: 100vh;
-  height: 100svh;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background-color: #000;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Takes up full screen height */
 }
-.page-home .video-background, .page-home .video-overlay {
-  height: 100vh;
-  height: 100svh;
-  width: 100vw;
+
+.video-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   z-index: -1;
-  background: rgba(0, 0, 0, 0.6);
 }
 
 .mySVG {
   display: inline-block;
   width: auto;
   transition: height 0.3s ease;
-  height: 90px;
+  height: 80px;
 }
 @media (min-width: 992px) {
   .mySVG {
@@ -12028,15 +12031,15 @@ textarea.form-control-lg {
   border-radius: 20px;
   transition: all 0.3s ease;
   border: 1px solid transparent;
-  background: #005A9C;
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   color: #6fff00 !important;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border: 1px solid #6fff00;
 }
 @media (min-width: 992px) {
   .nav-link {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     color: #6fff00 !important;
     margin-bottom: 0;
@@ -12044,7 +12047,6 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   border: 1px solid #6fff00;
   color: #fff !important;
@@ -12341,19 +12343,6 @@ textarea.form-control-lg {
   box-shadow: 0 0 40px rgba(111, 255, 0, 0.15);
 }
 
-html, body {
-  overflow-x: hidden;
-}
-
-body:not(.page-home) {
-  background-color: #0f172a;
-}
-
-@media (min-width: 992px) {
-  html, body {
-    width: 100vw;
-  }
-}
 .navbar-toggler-icon {
   filter: invert(50%) sepia(20%) saturate(2000%) hue-rotate(25deg) brightness(200%);
 }

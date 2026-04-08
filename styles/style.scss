@@ -1,47 +1,18 @@
-// ==========================================
 // 1. CUSTOM BOOTSTRAP VARIABLES
-// ==========================================
 $primary: #6fff00;   // Your Padel Ball Neon Yellow
 $secondary: #005A9C; // Your Court Blue
 
-
-// ==========================================
 // 2. IMPORT BOOTSTRAP & CUSTOM PAGES
-// ==========================================
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "page1";
 @import "jucatori";
 @import "rezultate";
 @import "galerie";
 
-
-
-// ==========================================
-// GLOBAL LAYOUT & SCROLLBAR FIX
-// ==========================================
-
-html, body {
-  // 1. Hide horizontal scrolling everywhere
-  overflow-x: hidden; 
-}
-
-// 2. Apply the dark background to fix the 1px mobile gap,
-// BUT exclude the homepage so the video stays visible!
-body:not(.page-home) {
-  background-color: #0f172a; 
-}
-
-// 3. Only apply the 100vw jump-fix to desktop screens!
-@include media-breakpoint-up(lg) {
-  html, body {
-    width: 100vw; 
-  }
-}
-
-// MOBILE HAMBURGER COLOR -----------------------------------------------------------------------------------
+// MOBILE HAMBURGER COLOR
 .navbar-toggler-icon {
-  // This filter shifts the white lines toward your Neon Yellow/Green
-  // You might need to tweak these numbers to get the exact match
+  // This filter shifts the white lines toward your Neon Yellow/Green 
+  //You might need to tweak these numbers to get the exact match
 filter: invert(50%) sepia(20%) saturate(2000%) hue-rotate(25deg) brightness(200%);
 }
 
