@@ -1,0 +1,82 @@
+// ==========================================
+// GALERIE PAGE STYLES
+// ==========================================
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer; // Makes it obvious you can click it
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 1 / 1; // Forces a perfect square so the grid never breaks!
+  transition: all 0.4s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures the photo fills the square without stretching
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  // The Dark gradient at the bottom with text
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    text-align: center;
+    transform: translateY(10px);
+    
+    span {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: $primary;
+      text-shadow: 0 0 5px rgba(#000, 0.8);
+    }
+  }
+
+  // Neon Hover Effects
+  &:hover {
+    border-color: $primary;
+    box-shadow: 0 10px 30px rgba($primary, 0.2);
+    transform: translateY(-5px);
+
+    img {
+      transform: scale(1.1); // Slowly zooms the photo
+    }
+
+    .gallery-overlay {
+      opacity: 1;
+      transform: translateY(0); // Slides the text up gracefully
+    }
+  }
+
+  // On Mobile, always show the text (since there is no hover)
+  @include media-breakpoint-down(md) {
+    .gallery-overlay {
+      opacity: 1;
+      transform: translateY(0);
+      padding: 1.5rem 0.5rem 0.5rem;
+      
+      span { font-size: 0.7rem; }
+    }
+  }
+}
+
+// Lightbox Modal Tweaks
+#lightboxModal {
+  // Makes the background behind the fullscreen photo dark and blurred
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.8);
+
+  #lightboxImage {
+    max-height: 90vh; // Prevents extremely tall vertical photos from being cut off
+    object-fit: contain;
+    border: 2px solid rgba($primary, 0.5);
+    box-shadow: 0 0 40px rgba($primary, 0.15);
+  }
+}

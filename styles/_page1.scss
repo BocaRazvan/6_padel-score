@@ -1,0 +1,150 @@
+// All of these rules will NOW only apply if the body has the class "page-home"
+.page-home {
+  
+  // 1. Lock the screen size and remove the scrollbar for the home page ONLY
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; 
+  background-color: #000; 
+
+  // 2. The Video Background
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -2;       
+  }
+
+  // 3. The Dark Overlay
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: -1; 
+  }
+}
+
+// SVG RESPONSIve -----------------------------------------------------------------------------------
+.mySVG {
+  display: inline-block;
+  width: auto; // Keeps the aspect ratio perfect
+  transition: height 0.3s ease; // Smoothly resizes if you flip a phone sideways
+
+  // --- MOBILE DEFAULT (iPhone SE, etc.) ---
+  height: 90px; 
+
+  // --- DESKTOP (Large screens and up) ---
+  @include media-breakpoint-up(lg) {
+    height: 70px; 
+  }
+svg {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+
+}
+
+// MENU STYLE -----------------------------------------------------------------------
+.nav-link {
+  // --- SHARED STYLES (Animations & Transitions) ---
+  padding: 8px 20px !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+
+  // --- MOBILE STYLES (iPhone SE, etc.) ---
+  // Tip: On mobile, use a more solid background so text is easy to read
+  background: $secondary; 
+  backdrop-filter: blur(10px);
+  color: $primary !important; // Use your Court Blue for better contrast
+  margin-bottom: 10px;
+          border: 1px solid $primary;
+
+
+  // --- DESKTOP STYLES (992px and up) ---
+  @include media-breakpoint-up(lg) {
+    background: rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(5px);
+    color: $primary !important; // Neon yellow links on desktop
+    margin-bottom: 0;
+        border: 1px solid $primary;
+
+  }
+
+  // --- HOVER STATE ---
+  &:hover {
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
+    border: 1px solid $primary;
+    color: #fff !important;
+    transform: scale(1.02);
+  }
+}
+
+// TIMER -------------------------------------------------------------------------------------------
+.fw-black { font-weight: 900; }
+
+.timer-box {
+  background: rgba(0, 0, 0, 0.6); // Darker glass effect
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-bottom: 4px solid $secondary; // Blue accent at the bottom
+  min-width: 100px;
+  transition: transform 0.3s ease;
+
+  &:last-child {
+    border-bottom: 4px solid $primary; // Neon yellow accent for the seconds
+  }
+
+  @include media-breakpoint-down(md) {
+    min-width: 70px;
+    padding: 1rem;
+    
+    span { font-size: 2rem; } // Smaller numbers on iPhone SE
+    small { font-size: 0.6rem; }
+  }
+}
+
+// Subtle pulse effect on the seconds to make it feel "live"
+#seconds {
+  animation: pulse-glow 1s infinite;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 1; }
+  50% { opacity: 0.1; }
+  100% { opacity: 1; }
+}
+
+// Location
+.location-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1.5rem;
+  border-left: 3px solid $secondary; // Using your Court Blue here
+  border-right: 3px solid transparent;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+  
+  // Animation to make it feel "live"
+  border-left-color: $secondary;
+  animation: border-flicker 3s infinite;
+
+  @include media-breakpoint-down(md) {
+    padding: 0.4rem 1rem;
+    span:first-child { font-size: 0.7rem; }
+    span:last-child { font-size: 1.1rem; }
+  }
+}
+
+@keyframes border-flicker {
+  0%, 100% { border-left-color: $secondary; }
+  50% { border-left-color: lighten($secondary, 20%); }
+}

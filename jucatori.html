@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elite Padel - Jucători</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="page-players bg-dark text-white">
+
+<nav class="navbar navbar-expand-lg bg-dark sticky-top py-2 ">
+  <div class="container pe-3">
+    <a class="mySVG" href="index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200"  class="drop-shadow-sm">
+            <defs>
+                <!-- Gradients -->
+                <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1e293b"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                
+                <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#334155"/>
+                    <stop offset="100%" stop-color="#1e293b"/>
+                </linearGradient>
+
+                <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#005A9C"/>
+                    <stop offset="100%" stop-color="#003d6b"/>
+                </linearGradient>
+
+                <radialGradient id="ballGrad" cx="30%" cy="30%" r="70%">
+<stop offset="0%" stop-color="#DFFF00"/> <stop offset="100%" stop-color="#99C200"/>
+                </radialGradient>
+
+                <!-- Updated Light Text Gradient -->
+                <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="100%" stop-color="#94a3b8"/>
+                </linearGradient>
+
+                <linearGradient id="floorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0"/>
+                    <stop offset="20%" stop-color="#cbd5e1" stop-opacity="1"/>
+                    <stop offset="80%" stop-color="#cbd5e1" stop-opacity="1"/>
+                    <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+                </linearGradient>
+
+                <!-- Drop Shadow Filter -->
+                <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.3"/>
+                </filter>
+
+                <!-- Padel Ball Definition -->
+                <g id="padel-ball">
+                    <circle cx="0" cy="0" r="9" fill="url(#ballGrad)"/>
+                    <!-- Tennis/Padel Seams -->
+                    <path d="M -6 -4 A 5.5 5.5 0 0 0 -6 4 M 6 -4 A 5.5 5.5 0 0 1 6 4" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                    <!-- Motion Blur/Spin Overlay -->
+                    <circle cx="0" cy="0" r="9" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="4 4">
+                        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.5s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <!-- Motion Path -->
+                <path id="bounce-path" d="M 100 100 Q 175 -10, 250 140 Q 320 30, 390 140 Q 455 60, 520 140 Q 565 90, 610 140 Q 635 120, 660 140" fill="none"/>
+            </defs>
+
+            <!-- Background Floor Line -->
+            <path d="M 140 140 L 600 140" stroke="url(#floorGrad)" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Stylish Text: Elite Padel -->
+            <text x="180" y="135" filter="url(#drop-shadow)">
+                <tspan font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="300" font-size="60" fill="#00E5FF" letter-spacing="2">Elite</tspan>
+                <tspan font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-size="65" fill="url(#textGrad)" font-style="italic" dx="15" letter-spacing="1">PADEL</tspan>
+            </text>
+
+            <!-- Racket Group -->
+            <g transform="translate(100, 100) rotate(35)" filter="url(#drop-shadow)">
+                
+                <!-- Safety Cord -->
+                <path d="M 0 138 C -20 155, 20 165, -5 180" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Handle Base Cap -->
+                <rect x="-14" y="130" width="28" height="10" rx="3" fill="#0f172a"/>
+
+                <!-- Handle Overgrip -->
+                <rect x="-12" y="75" width="24" height="58" rx="2" fill="#f8fafc"/>
+                <path d="M -12 85 L 12 95 M -12 100 L 12 110 M -12 115 L 12 125" stroke="#cbd5e1" stroke-width="2"/>
+
+                <!-- Throat Arms (Split Bridge) -->
+                <path d="M -26 35 C -15 50, -12 65, -12 78 L -2 78 C -2 60, -8 45, -18 35 Z" fill="url(#frameGrad)"/>
+                <path d="M 26 35 C 15 50, 12 65, 12 78 L 2 78 C 2 60, 8 45, 18 35 Z" fill="url(#frameGrad)"/>
+                <path d="M -12 76 L 12 76" stroke="url(#frameGrad)" stroke-width="6"/>
+
+                <!-- Racket Head / Frame -->
+                <ellipse cx="0" cy="0" rx="48" ry="58" fill="url(#faceGrad)" stroke="url(#frameGrad)" stroke-width="8"/>
+                
+                <!-- Inner Cyan Accent -->
+                <ellipse cx="0" cy="0" rx="44" ry="54" fill="none" stroke="#00E5FF" stroke-width="2"/>
+                <ellipse cx="0" cy="0" rx="41" ry="51" fill="none" stroke="#0f172a" stroke-width="1" opacity="0.5"/>
+
+                <!-- Racket Face Holes -->
+                <g fill="#0f172a" opacity="0.8">
+                    <!-- Center Vertical -->
+                    <circle cx="0" cy="-35" r="3.5"/>
+                    <circle cx="0" cy="-17.5" r="3.5"/>
+                    <circle cx="0" cy="0" r="3.5"/>
+                    <circle cx="0" cy="17.5" r="3.5"/>
+                    <circle cx="0" cy="35" r="3.5"/>
+                    
+                    <!-- Left Side 1 -->
+                    <circle cx="-16" cy="-26.5" r="3.5"/>
+                    <circle cx="-16" cy="-9" r="3.5"/>
+                    <circle cx="-16" cy="8.5" r="3.5"/>
+                    <circle cx="-16" cy="26.5" r="3.5"/>
+
+                    <!-- Left Side 2 -->
+                    <circle cx="-32" cy="-17.5" r="3.5"/>
+                    <circle cx="-32" cy="0" r="3.5"/>
+                    <circle cx="-32" cy="17.5" r="3.5"/>
+
+                    <!-- Right Side 1 -->
+                    <circle cx="16" cy="-26.5" r="3.5"/>
+                    <circle cx="16" cy="-9" r="3.5"/>
+                    <circle cx="16" cy="8.5" r="3.5"/>
+                    <circle cx="16" cy="26.5" r="3.5"/>
+
+                    <!-- Right Side 2 -->
+                    <circle cx="32" cy="-17.5" r="3.5"/>
+                    <circle cx="32" cy="0" r="3.5"/>
+                    <circle cx="32" cy="17.5" r="3.5"/>
+                </g>
+            </g>
+
+            <!-- Impact Ring Animation (Synchronized with ball hit) -->
+            <circle cx="100" cy="100" r="0" fill="none" stroke="#00E5FF" stroke-width="4">
+                <animate attributeName="r" values="0; 35; 45" keyTimes="0; 0.1; 1" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1; 0; 0" keyTimes="0; 0.15; 1" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            
+            <circle cx="100" cy="100" r="0" fill="none" stroke="#CCFF00" stroke-width="2">
+                <animate attributeName="r" values="0; 20; 30" keyTimes="0; 0.1; 1" dur="2s" repeatCount="indefinite" begin="0.05s"/>
+                <animate attributeName="opacity" values="1; 0; 0" keyTimes="0; 0.15; 1" dur="2s" repeatCount="indefinite" begin="0.05s"/>
+            </circle>
+
+            <!-- Animated Bouncing Ball with Trail -->
+            
+            <!-- Trail 2 (Farthest back) -->
+            <g opacity="0.25">
+                <use href="#padel-ball" transform="scale(0.55)">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="0s">
+                        <mpath href="#bounce-path"/>
+                    </animateMotion>
+                </use>
+            </g>
+
+            <!-- Trail 1 (Middle) -->
+            <g opacity="0.5">
+                <use href="#padel-ball" transform="scale(0.75)">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="-0.04s">
+                        <mpath href="#bounce-path"/>
+                    </animateMotion>
+                </use>
+            </g>
+
+            <!-- Main Padel Ball (Front) -->
+            <g filter="url(#drop-shadow)">
+                <use href="#padel-ball">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="-0.08s">
+                        <mpath href="#bounce-path"/>
+                    </animateMotion>
+                </use>
+            </g>
+        </svg>
+    </a>
+    
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    
+    <div class="collapse navbar-collapse text-center" id="navbarNav">
+      <ul class="navbar-nav ms-auto fs-4">
+        <li class="nav-item px-lg-3 mb-2 mb-lg-0"><a class="nav-link text-secondary" href="jucatori.html">Jucători</a></li>
+        <li class="nav-item px-lg-3 mb-2 mb-lg-0"><a class="nav-link text-secondary" href="rezultate.html">Rezultate</a></li>
+        <li class="nav-item px-lg-3 mb-2 mb-lg-0"><a class="nav-link text-secondary" href="galerie.html">Media</a></li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-2 pt-1">
+  <h1 class="display-3 fw-black text-primary text-uppercase mt-3 mb-2">Danezu' & Bralin</h1>
+  <p class="lead text-secondary mb-3">Echipa 1: <strong>Danezu' - Bralin</strong><br>Jucătorii sunt mereu pregătiți 
+    pentru Marea Provocare.</p>
+
+  <div class="row g-4 justify-content-md-between">
+
+    <div class="col-md-6 col-lg-6">
+
+      <div class="player-card">
+        <div class="player-img-wrapper">
+          <img src="/assests/dan.JPG" alt="Danezu" class="player-img">
+          <div class="player-rank">SNIPER</div>
+        </div>
+        <div class="player-info p-4">
+          <h3 class="fw-bold mb-1">Danezu'</h3>
+          <p class="text-secondary small mb-3 text-uppercase tracking-wider">Stil de joc: Agresiv</p>
+          
+          <div class="stats">
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Viteză</span><span>70%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 70%"></div>
+              </div>
+            </div>
+                          <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Control</span><span>80%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Putere</span><span>90%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 90%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Agilitate</span><span>70%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 70%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Noroc</span><span>40%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 40%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 pt-3 border-top border-secondary border-opacity-25">
+  <span class="text-primary fw-bold fst-italic opacity-50" style="font-size: 0.9rem;">"Hai sa luam si game-ul asta!"</span>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-6">
+
+      <div class="player-card">
+        <div class="player-img-wrapper">
+          <img src="/assests/bralin.JPG" alt="Danezu" class="player-img">
+          <div class="player-rank">DEFENSE</div>
+        </div>
+        <div class="player-info p-4">
+          <h3 class="fw-bold mb-1">Bralin'</h3>
+          <p class="text-secondary small mb-3 text-uppercase tracking-wider">Stil de joc: Defensiv</p>
+          
+          <div class="stats">
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Viteză</span><span>90%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 90%"></div>
+              </div>
+            </div>
+                          <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Control</span><span>90%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Putere</span><span>90%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 75%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Agilitate</span><span>100%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Noroc</span><span>70%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+                    <div class="mt-3 pt-3 border-top border-secondary border-opacity-25">
+  <span class="text-primary fw-bold fst-italic opacity-50" style="font-size: 0.9rem;">"Bineee, Dan! Excelent!"</span>
+</div>
+        </div>
+      </div>
+    </div>
+     </div>
+
+
+    
+    <div class="container mt-3 pt-3">
+  <h1 class="display-3 fw-black text-primary text-uppercase mt-1 mb-2">Pavalucu' & Cozo</h1>
+  <p class="lead text-secondary mb-3">Echipa 2: <strong>Pavalucu' - Cozo</strong><br>Marea Provocare, un fleac pentru ei.</p>
+
+  <div class="row g-4 justify-content-md-between">
+
+    <div class="col-md-6 col-lg-6">
+
+      <div class="player-card">
+        <div class="player-img-wrapper">
+          <img src="/assests/paul.JPG" alt="Danezu" class="player-img">
+          <div class="player-rank">SMASHER</div>
+        </div>
+        <div class="player-info p-4">
+          <h3 class="fw-bold mb-1">Pavalucu'</h3>
+          <p class="text-secondary small mb-3 text-uppercase tracking-wider">Stil de joc: Agresiv</p>
+          
+          <div class="stats">
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Viteză</span><span>70%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 70%"></div>
+              </div>
+            </div>
+              <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Control</span><span>80%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Putere</span><span>100%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Agilitate</span><span>80%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 80%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Noroc</span><span>90%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+                              <div class="mt-3 pt-3 border-top border-secondary border-opacity-25">
+  <span class="text-primary fw-bold fst-italic opacity-50" style="font-size: 0.9rem;">"Nu mai juca la siguranta! Da-i tare orice!"</span>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-6 mb-4">
+
+      <div class="player-card">
+        <div class="player-img-wrapper">
+          <img src="/assests/coco.JPG" alt="Danezu" class="player-img">
+          <div class="player-rank">TACTICIAN</div>
+        </div>
+        <div class="player-info p-4">
+          <h3 class="fw-bold mb-1">Cozo'</h3>
+          <p class="text-secondary small mb-3 text-uppercase tracking-wider">Stil de joc: Spontan</p>
+          
+          <div class="stats">
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Viteză</span><span>80%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 80%"></div>
+              </div>
+            </div>
+                          <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Control</span><span>100%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Putere</span><span>50%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 50%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Agilitate</span><span>100%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+                        <div class="mb-2">
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Noroc</span><span>90%</span>
+              </div>
+              <div class="progress bg-dark" style="height: 6px;">
+                <div class="progress-bar bg-primary" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+                                        <div class="mt-3 pt-3 border-top border-secondary border-opacity-25">
+  <span class="text-primary fw-bold fst-italic opacity-50" style="font-size: 0.9rem;">"5-1 la ei... de aici incepe revenirea!"</span>
+</div>
+        </div>
+      </div>
+    </div>
+ 
+
+    
+  
+
+
+
+</div>
+</div>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
