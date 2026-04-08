@@ -11982,6 +11982,10 @@ textarea.form-control-lg {
 .page-home {
   display: flex;
   flex-direction: column;
+  height: 100vh; /* Fallback for older browsers */
+  height: 100svh; /* Magic fix for mobile address bars */
+  margin: 0;
+  overflow: hidden; /* Prevents the "bounce" scroll on mobile */
 }
 
 .video-background {
