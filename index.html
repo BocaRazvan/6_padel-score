@@ -11,7 +11,7 @@
 <body class="page-home">
 
 <!-- Video bg ------------------------------------------------------------------------------------------------------ -->
-<video autoplay loop muted playsinline class="video-background">
+<video autoplay loop muted playsinline preload="auto" class="video-background">
   <source src="assests/backg.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -170,7 +170,7 @@
   </div>
 </nav>
 
-<div class="container d-flex flex-column flex-grow-1 justify-content-end align-items-center mb-2" style="z-index: 1;">
+<div class="container d-flex flex-column flex-grow-1 justify-content-end align-items-center mb-4" style="z-index: 1;">
   <h1 class="display-3 fw-black text-primary text-uppercase mb-3" style="line-height: 0.8;">Next Match</h1>
   <div class="location-box d-flex align-items-center mb-2">
     <span class="text-secondary fw-bold text-uppercase me-2" style="letter-spacing: 0.2rem;">Locatie:</span>
@@ -202,7 +202,6 @@
 
 <!-- TIMER JS------------------------------------------------------------------------------------>
 <script>
-
 // SET THE DATE HERE (Year, Month [0-11], Day, Hour, Minute)
 const targetDate = new Date("Apr 11, 2026 18:00:00").getTime();
 
