@@ -1,10 +1,14 @@
 .page-home {
   display: flex;
   flex-direction: column;
-  height: 100vh;     /* Fallback for older browsers */
-  height: 100svh;    /* Magic fix for mobile address bars */
+  /* Change height to min-height so it can technically "stretch" for the refresh */
+  min-height: 100.1svh; 
   margin: 0;
-    /* Prevents the "bounce" scroll on mobile */
+  /* Change hidden to auto to enable the gesture */
+  overflow-y: auto; 
+  overflow-x: hidden;
+  /* This prevents the annoying "pull-to-refresh" from happening INSIDE the offcanvas */
+  overscroll-behavior-y: contain; 
 }
 
 // VIDEO BACKGROUND SYSTEM
