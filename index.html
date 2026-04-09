@@ -224,6 +224,17 @@ style="width: 800px; ">
       
       <div class="flex-grow-1 overflow-auto pe-2 mb-3" id="calendarContainer"></div>
 
+      <div class="mb-3">
+        <button class="btn btn-dark border border-secondary w-100 d-flex justify-content-between align-items-center py-2 shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSquad">
+          <span class="small text-uppercase fw-bold text-white-50">👀 Vezi program colegi</span>
+          <span class="badge bg-primary text-dark rounded-pill">Live</span>
+        </button>
+        <div class="collapse mt-2" id="collapseSquad">
+          <div class="card card-body bg-black border-secondary p-2 shadow" id="innerSquadView" style="max-height: 220px; overflow-y: auto;">
+            </div>
+        </div>
+      </div>
+
       <div class="mt-auto pt-2 border-top border-secondary">
         <button class="btn btn-primary w-100 fw-bold text-dark text-uppercase py-2" id="saveScheduleBtn">
           💾 Salvează Programul
@@ -405,6 +416,11 @@ const fetchPublicSchedule = async () => {
       </div>
     `;
   });
+
+
+// 👇 ADD THIS ONE LINE RIGHT HERE 👇
+  if (document.getElementById('innerSquadView')) document.getElementById('innerSquadView').innerHTML = publicContainer.innerHTML;
+
 
   // 2. THE MATCHMAKER ALGORITHM
   const squadNames = ['bralin', 'paul', 'danezu', 'coco']; 
