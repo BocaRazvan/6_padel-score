@@ -411,6 +411,17 @@ const fetchPublicSchedule = async () => {
   let allPlayerSlots = [];
   let allSubmitted = true;
 
+  // =======================================================
+  // 👇 NEW: RESET THE TITLE TO DEFAULT EVERY TIME WE CHECK
+  // =======================================================
+  const titleEl = document.querySelector('h1.display-3');
+  if (titleEl) {
+    titleEl.innerText = "Next Match"; // Put the original text back
+    titleEl.classList.remove('text-success'); // Remove the green
+    titleEl.classList.add('text-primary'); // Bring back the neon blue
+  }
+  // =======================================================
+
   squadNames.forEach(name => {
     const p = data.find(row => row.player_name === name);
     let slots = p ? p.available_slots : [];
