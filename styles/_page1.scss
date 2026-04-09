@@ -291,3 +291,9 @@ svg {
     background: rgba($primary, 0.1);
   }
 }
+
+// Override Bootstrap's default success color with a sharp Neon Green
+h1.text-success {
+  color: #CCFF00 !important; // Matches the Padel Ball color from your SVG!
+  text-shadow: 0 0 15px rgba(204, 255, 0, 0.4); // Adds a slight solid glow so it pops off the video
+}

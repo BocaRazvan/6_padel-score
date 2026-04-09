@@ -12252,6 +12252,11 @@ textarea.form-control-lg {
   background: rgba(111, 255, 0, 0.1);
 }
 
+h1.text-success, .text-success.h1 {
+  color: #CCFF00 !important;
+  text-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+}
+
 .page-players {
   background: radial-gradient(circle at top, #0f172a 0%, #000 100%);
   min-height: 100vh;
