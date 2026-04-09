@@ -436,44 +436,21 @@ if (commonSlots.length > 0) {
       commonSlots.sort(); 
       const nextMatchStr = commonSlots[0]; 
       
-      // Update the "Next Match" text to prove it worked
-      document.querySelector('h1.display-3').innerText = "Meci Confirmat!";
+      // 1. Extract and format the date and time
+      const [datePart, timePart] = nextMatchStr.split(' '); 
+      const matchObj = new Date(datePart);
+      
+      // Formats to "15 apr" or "15 apr." (depending on the browser's exact Romanian dictionary)
+      const niceDate = matchObj.toLocaleDateString('ro-RO', { day: 'numeric', month: 'short' }); 
+
+      // 2. Make the giant H1 title show the exact date and time!
+      document.querySelector('h1.display-3').innerText = `${niceDate} ${timePart}`;
+      
+      // Turn the giant text green to show it's confirmed
       document.querySelector('h1.display-3').classList.remove('text-primary');
       document.querySelector('h1.display-3').classList.add('text-success');
 
-      // ==========================================================
-      // 👇 NEW: PLACE DATE RIGHT UNDER "LOCATIE" 👇
-      // ==========================================================
-      let dateDisplay = document.getElementById('exactDateDisplay');
-      
-      if (!dateDisplay) {
-        dateDisplay = document.createElement('h5');
-        dateDisplay.id = 'exactDateDisplay';
-        // Matches the aesthetic of the location box, with a little margin below
-        dateDisplay.className = 'text-white fw-light mb-4 mt-1 text-uppercase'; 
-        
-        // Find the location box and insert this right after it!
-        const locationBox = document.querySelector('.location-box');
-        if (locationBox) {
-          locationBox.parentNode.insertBefore(dateDisplay, locationBox.nextSibling);
-        }
-      }
-
-      // Format the string into a beautiful Romanian date
-      const [datePart, timePart] = nextMatchStr.split(' '); 
-      const matchObj = new Date(datePart);
-      const niceDate = matchObj.toLocaleDateString('ro-RO', { 
-        weekday: 'long', 
-        day: 'numeric', 
-        month: 'long' 
-      });
-      
-      // Capitalize the first letter and inject the HTML
-      const capitalizedDate = niceDate.charAt(0).toUpperCase() + niceDate.slice(1);
-      dateDisplay.innerHTML = `🗓️ <span style="letter-spacing: 0.1rem;">${capitalizedDate}</span> <span class="text-primary fw-bold ms-2" style="letter-spacing: 0.1rem;">🕒 ${timePart}</span>`;
-      // ==========================================================
-
-      // Fire up the timer!
+      // 3. Fire up the timer!
       startDynamicTimer(nextMatchStr);
     } else {
       showTimerMessage("❌ Nu ați găsit o dată comună! Discutați pe grup.");
