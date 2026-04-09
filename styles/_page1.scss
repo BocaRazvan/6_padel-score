@@ -147,3 +147,147 @@ svg {
   0%, 100% { border-left-color: $secondary; }
   50% { border-left-color: lighten($secondary, 20%); }
 }
+
+// ==========================================================================
+// SCHEDULING OFFCANVAS & MODAL (Sincronizare Meci)
+// ==========================================================================
+
+// 1. Offcanvas Customization
+.offcanvas {
+  // Adds a slight transparency and blur to the dark background
+  background-color: rgba(15, 23, 42, 0.95) !important; 
+  backdrop-filter: blur(10px);
+  border-left: 2px solid $secondary !important;
+
+  .offcanvas-header {
+    border-bottom: 1px solid rgba($secondary, 0.3) !important;
+  }
+}
+
+
+// 2. Custom Scrollbar for the Offcanvas Body (Desktop only)
+#publicScheduleView {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba($primary, 0.5); 
+    border-radius: 10px;
+    
+    &:hover {
+      background: $primary;
+    }
+  }
+}
+
+// 3. Player Availability Cards ("Glass" Effect)
+.schedule-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid $primary; // Neon green on hover
+  }
+}
+
+// 4. Modal Dark Mode Overrides
+.modal-content {
+  background-color: #0f172a !important; // Deep court slate
+  border: 1px solid $secondary !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+  .modal-header {
+    border-bottom: 1px solid rgba($secondary, 0.3) !important;
+  }
+}
+
+// 5. Form Inputs (PIN Code & Select Dropdown)
+.form-select, .form-control {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba($secondary, 0.5) !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-color: $primary !important; // Neon glow on focus
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.25) !important;
+  }
+
+  // Styles the options inside the dropdown
+  option {
+    background-color: #0f172a;
+    color: #fff;
+  }
+}
+
+// Makes the PIN input letter-spacing wider for that "code" feel
+#pinInput {
+  letter-spacing: 0.5rem;
+  &::placeholder {
+    letter-spacing: 0.2rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+// 6. Time Slot Toggle Buttons
+.time-slot-label {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba($secondary, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  
+  &:hover {
+    border-color: $primary;
+    background: rgba($primary, 0.1);
+  }
+}
+
+// When the hidden checkbox is checked, light up the label!
+.btn-check:checked + .time-slot-label {
+  background: $primary;
+  border-color: $primary;
+  color: #000;
+  font-weight: 900;
+  box-shadow: 0 0 10px rgba($primary, 0.5);
+  transform: scale(1.05);
+}
+
+// 7. Time Grid Layout (For 09:00 to 21:00)
+.time-grid {
+  display: grid;
+  // This magic line automatically creates columns that are at least 65px wide
+  grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+  gap: 0.4rem; // Tight gap to save space
+}
+
+// Update your existing time-slot-label to fill the grid perfectly
+.time-slot-label {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba($secondary, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  
+  // -- NEW ADDITIONS FOR GRID --
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem 0 !important; // Smaller padding top/bottom
+  font-size: 0.85rem; // Slightly smaller font to fit mobile
+  border-radius: 6px !important; // A slightly sharper, modern button look
+  
+  &:hover {
+    border-color: $primary;
+    background: rgba($primary, 0.1);
+  }
+}

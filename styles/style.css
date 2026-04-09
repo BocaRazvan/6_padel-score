@@ -30,7 +30,7 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #6fff00;
-  --bs-secondary: #005A9C;
+  --bs-secondary: cyan;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -38,7 +38,7 @@
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-primary-rgb: 111, 255, 0;
-  --bs-secondary-rgb: 0, 90, 156;
+  --bs-secondary-rgb: 0, 255, 255;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -46,7 +46,7 @@
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
   --bs-primary-text-emphasis: rgb(44.4, 102, 0);
-  --bs-secondary-text-emphasis: rgb(0, 36, 62.4);
+  --bs-secondary-text-emphasis: #006666;
   --bs-success-text-emphasis: rgb(10, 54, 33.6);
   --bs-info-text-emphasis: rgb(5.2, 80.8, 96);
   --bs-warning-text-emphasis: rgb(102, 77.2, 2.8);
@@ -54,7 +54,7 @@
   --bs-light-text-emphasis: #495057;
   --bs-dark-text-emphasis: #495057;
   --bs-primary-bg-subtle: rgb(226.2, 255, 204);
-  --bs-secondary-bg-subtle: rgb(204, 222, 235.2);
+  --bs-secondary-bg-subtle: #ccffff;
   --bs-success-bg-subtle: rgb(209, 231, 220.8);
   --bs-info-bg-subtle: rgb(206.6, 244.4, 252);
   --bs-warning-bg-subtle: rgb(255, 242.6, 205.4);
@@ -62,7 +62,7 @@
   --bs-light-bg-subtle: rgb(251.5, 252, 252.5);
   --bs-dark-bg-subtle: #ced4da;
   --bs-primary-border-subtle: rgb(197.4, 255, 153);
-  --bs-secondary-border-subtle: rgb(153, 189, 215.4);
+  --bs-secondary-border-subtle: #99ffff;
   --bs-success-border-subtle: rgb(163, 207, 186.6);
   --bs-info-border-subtle: rgb(158.2, 233.8, 249);
   --bs-warning-border-subtle: rgb(255, 230.2, 155.8);
@@ -142,7 +142,7 @@
   --bs-tertiary-bg: rgb(42.5, 47.5, 52.5);
   --bs-tertiary-bg-rgb: 43, 48, 53;
   --bs-primary-text-emphasis: rgb(168.6, 255, 102);
-  --bs-secondary-text-emphasis: rgb(102, 156, 195.6);
+  --bs-secondary-text-emphasis: #66ffff;
   --bs-success-text-emphasis: rgb(117, 183, 152.4);
   --bs-info-text-emphasis: rgb(109.8, 223.2, 246);
   --bs-warning-text-emphasis: rgb(255, 217.8, 106.2);
@@ -150,7 +150,7 @@
   --bs-light-text-emphasis: #f8f9fa;
   --bs-dark-text-emphasis: #dee2e6;
   --bs-primary-bg-subtle: rgb(22.2, 51, 0);
-  --bs-secondary-bg-subtle: rgb(0, 18, 31.2);
+  --bs-secondary-bg-subtle: #003333;
   --bs-success-bg-subtle: rgb(5, 27, 16.8);
   --bs-info-bg-subtle: rgb(2.6, 40.4, 48);
   --bs-warning-bg-subtle: rgb(51, 38.6, 1.4);
@@ -158,7 +158,7 @@
   --bs-light-bg-subtle: #343a40;
   --bs-dark-bg-subtle: #1a1d20;
   --bs-primary-border-subtle: rgb(66.6, 153, 0);
-  --bs-secondary-border-subtle: rgb(0, 54, 93.6);
+  --bs-secondary-border-subtle: #009999;
   --bs-success-border-subtle: rgb(15, 81, 50.4);
   --bs-info-border-subtle: rgb(7.8, 121.2, 144);
   --bs-warning-border-subtle: rgb(153, 115.8, 4.2);
@@ -1950,13 +1950,13 @@ progress {
 
 .table-secondary {
   --bs-table-color: #000;
-  --bs-table-bg: rgb(204, 222, 235.2);
-  --bs-table-border-color: rgb(163.2, 177.6, 188.16);
-  --bs-table-striped-bg: rgb(193.8, 210.9, 223.44);
+  --bs-table-bg: #ccffff;
+  --bs-table-border-color: rgb(163.2, 204, 204);
+  --bs-table-striped-bg: rgb(193.8, 242.25, 242.25);
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: rgb(183.6, 199.8, 211.68);
+  --bs-table-active-bg: rgb(183.6, 229.5, 229.5);
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: rgb(188.7, 205.35, 217.56);
+  --bs-table-hover-bg: rgb(188.7, 235.875, 235.875);
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3028,20 +3028,20 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #005A9C;
-  --bs-btn-border-color: #005A9C;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: rgb(0, 76.5, 132.6);
-  --bs-btn-hover-border-color: rgb(0, 72, 124.8);
-  --bs-btn-focus-shadow-rgb: 38, 115, 171;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: rgb(0, 72, 124.8);
-  --bs-btn-active-border-color: rgb(0, 67.5, 117);
+  --bs-btn-color: #000;
+  --bs-btn-bg: cyan;
+  --bs-btn-border-color: cyan;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: rgb(38.25, 255, 255);
+  --bs-btn-hover-border-color: rgb(25.5, 255, 255);
+  --bs-btn-focus-shadow-rgb: 0, 217, 217;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #33ffff;
+  --bs-btn-active-border-color: rgb(25.5, 255, 255);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #005A9C;
-  --bs-btn-disabled-border-color: #005A9C;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: cyan;
+  --bs-btn-disabled-border-color: cyan;
 }
 
 .btn-success {
@@ -3164,19 +3164,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-secondary {
-  --bs-btn-color: #005A9C;
-  --bs-btn-border-color: #005A9C;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #005A9C;
-  --bs-btn-hover-border-color: #005A9C;
-  --bs-btn-focus-shadow-rgb: 0, 90, 156;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #005A9C;
-  --bs-btn-active-border-color: #005A9C;
+  --bs-btn-color: cyan;
+  --bs-btn-border-color: cyan;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: cyan;
+  --bs-btn-hover-border-color: cyan;
+  --bs-btn-focus-shadow-rgb: 0, 255, 255;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: cyan;
+  --bs-btn-active-border-color: cyan;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #005A9C;
+  --bs-btn-disabled-color: cyan;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #005A9C;
+  --bs-btn-disabled-border-color: cyan;
   --bs-gradient: none;
 }
 
@@ -6811,7 +6811,7 @@ textarea.form-control-lg {
 }
 
 .text-bg-secondary {
-  color: #fff !important;
+  color: #000 !important;
   background-color: RGBA(var(--bs-secondary-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 
@@ -6859,8 +6859,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-secondary-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: RGBA(0, 72, 125, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(0, 72, 125, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(51, 255, 255, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(51, 255, 255, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-success {
@@ -12065,7 +12065,7 @@ textarea.form-control-lg {
   backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 15px;
-  border-bottom: 4px solid #005A9C;
+  border-bottom: 4px solid cyan;
   min-width: 100px;
   transition: transform 0.3s ease;
 }
@@ -12103,11 +12103,11 @@ textarea.form-control-lg {
 .location-box {
   background: rgba(255, 255, 255, 0.05);
   padding: 0.5rem 1.5rem;
-  border-left: 3px solid #005A9C;
+  border-left: 3px solid cyan;
   border-right: 3px solid transparent;
   border-radius: 4px;
   backdrop-filter: blur(5px);
-  border-left-color: #005A9C;
+  border-left-color: cyan;
   animation: border-flicker 3s infinite;
 }
 @media (max-width: 767.98px) {
@@ -12124,12 +12124,134 @@ textarea.form-control-lg {
 
 @keyframes border-flicker {
   0%, 100% {
-    border-left-color: #005A9C;
+    border-left-color: cyan;
   }
   50% {
-    border-left-color: rgb(3, 148.3846153846, 255);
+    border-left-color: #66ffff;
   }
 }
+.offcanvas {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-left: 2px solid cyan !important;
+}
+.offcanvas .offcanvas-header {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+#publicScheduleView::-webkit-scrollbar {
+  width: 6px;
+}
+#publicScheduleView::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+#publicScheduleView::-webkit-scrollbar-thumb {
+  background: rgba(111, 255, 0, 0.5);
+  border-radius: 10px;
+}
+#publicScheduleView::-webkit-scrollbar-thumb:hover {
+  background: #6fff00;
+}
+
+.schedule-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.schedule-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #6fff00;
+}
+
+.modal-content {
+  background-color: #0f172a !important;
+  border: 1px solid cyan !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.modal-content .modal-header {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+.form-select, .form-control {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(0, 255, 255, 0.5) !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
+.form-select:focus, .form-control:focus {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border-color: #6fff00 !important;
+  box-shadow: 0 0 0 0.25rem rgba(111, 255, 0, 0.25) !important;
+}
+.form-select option, .form-control option {
+  background-color: #0f172a;
+  color: #fff;
+}
+
+#pinInput {
+  letter-spacing: 0.5rem;
+}
+#pinInput::-moz-placeholder {
+  letter-spacing: 0.2rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+#pinInput::placeholder {
+  letter-spacing: 0.2rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.time-slot-label {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.time-slot-label:hover {
+  border-color: #6fff00;
+  background: rgba(111, 255, 0, 0.1);
+}
+
+.btn-check:checked + .time-slot-label {
+  background: #6fff00;
+  border-color: #6fff00;
+  color: #000;
+  font-weight: 900;
+  box-shadow: 0 0 10px rgba(111, 255, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+  gap: 0.4rem;
+}
+
+.time-slot-label {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem 0 !important;
+  font-size: 0.85rem;
+  border-radius: 6px !important;
+}
+.time-slot-label:hover {
+  border-color: #6fff00;
+  background: rgba(111, 255, 0, 0.1);
+}
+
 .page-players {
   background: radial-gradient(circle at top, #0f172a 0%, #000 100%);
   min-height: 100vh;
@@ -12189,7 +12311,7 @@ textarea.form-control-lg {
 .custom-tabs .nav-link {
   color: #fff;
   background-color: transparent !important;
-  border: 1px solid #005A9C;
+  border: 1px solid cyan;
   border-radius: 50px;
   padding: 8px 32px;
   margin: 0 10px;
